@@ -28,7 +28,8 @@ class TeamsController < ApplicationController
 
     respond_to do |format|
       if @team.save
-        format.html { redirect_to @team, notice: 'Team was successfully created.' }
+        # TeamMailer.send_team_created_mail.deliver_later
+        format.html { redirect_to managers_url, notice: 'Add a manager to your' }
         format.json { render :show, status: :created, location: @team }
       else
         format.html { render :new }
