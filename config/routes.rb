@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :teams
-  resources :managers
-  resources :players
+  resources :teams do
+    resources :team_managers
+    resources :players
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
