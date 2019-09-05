@@ -14,9 +14,9 @@ class TeamManagersController < ApplicationController
   end
 
   def create
-    @team_manager = TeamManager.new(manager_params)
+    @team_manager = TeamManager.new(manager_params.merge(team_id: params[:team_id]))
     @team_manager.save
-    render json: TeamManager.all
+    # render json: TeamManager.all
   end
 
   def update
@@ -30,6 +30,6 @@ class TeamManagersController < ApplicationController
   private
 
   def manager_params
-    params.require(:team_manager).permit(:name, :team_id)
+    params.require(:team_manager).permit(:name)
   end
 end

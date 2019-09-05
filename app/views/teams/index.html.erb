@@ -20,9 +20,9 @@
         <td><%= team.id %></td>
         <td><%= team.name %></td>
         <td><%= team.abbreviation %></td>
-<!--        <td><%#= team.manager.name %></td>-->
+        <td><%= team.team_manager.name %></td>
         <td><% team.players.each do |player| %>
-            <%= player.name %><br />
+            <%= player.name %><br/>
           <% end %></td>>
         <td><%= link_to 'Show', team %></td>
 <!--        <td><%#= image_tag 'Screenshot 2019-09-02 at 16.12.59.png' %></td>-->
